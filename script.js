@@ -71,12 +71,42 @@
 // console.log(company.ceo);
 // console.log(company.ceo["last Name"]);
 
-var company = {
-    name: "Facebook",
-    ceo:{
-        firstName: "Mark",
-        "Last Name": "Zuckerburg",
-    },
-    stock: 110
-};
-console.log(company);
+// var company = {
+//     name: "Facebook",
+//     ceo:{
+//         firstName: "Mark",
+//         "Last Name": "Zuckerburg",
+//     },
+//     stock: 110
+// };
+// console.log(company);
+
+// function multiply (x, y) {
+//     return x * y;
+// }
+// console.log(multiply(5, 2));
+// multiply.version = "1.0.2.5";
+// console.log(multiply.version);
+
+
+//function factory
+function makeMultiplier(multiplier) {
+    var myFunc = function (x) {
+        return multiplier * x;
+    };
+    return myFunc;
+}
+console.log(makeMultiplier(2))
+var multiplyBy2 = makeMultiplier(2);
+console.log(multiplyBy2(5));
+var multiplyBy3 = makeMultiplier(3);
+console.log(multiplyBy3(10));
+
+// Passing function as arguments
+function doOperationOn(x, operation) {
+    return operation(x);
+}
+var result = doOperationOn(5, multiplyBy2);
+console.log(result);
+result = doOperationOn(5, multiplyBy3);
+console.log(result);
