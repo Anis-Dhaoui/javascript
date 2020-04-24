@@ -89,24 +89,46 @@
 // console.log(multiply.version);
 
 
-//function factory
-function makeMultiplier(multiplier) {
-    var myFunc = function (x) {
-        return multiplier * x;
-    };
-    return myFunc;
-}
-console.log(makeMultiplier(2))
-var multiplyBy2 = makeMultiplier(2);
-console.log(multiplyBy2(5));
-var multiplyBy3 = makeMultiplier(3);
-console.log(multiplyBy3(10));
+//****function factory****
+// function makeMultiplier(multiplier) {
+//     var myFunc = function (x) {
+//         return multiplier * x;
+//     };
+//     return myFunc;
+// }
+// console.log(makeMultiplier(2))
+// var multiplyBy2 = makeMultiplier(2);
+// console.log(multiplyBy2(5));
+// var multiplyBy3 = makeMultiplier(3);
+// console.log(multiplyBy3(10));
 
-// Passing function as arguments
-function doOperationOn(x, operation) {
-    return operation(x);
-}
-var result = doOperationOn(5, multiplyBy2);
-console.log(result);
-result = doOperationOn(5, multiplyBy3);
-console.log(result);
+// //**** Passing function as arguments****
+// function doOperationOn(x, operation) {
+//     return operation(x);
+// }
+// var result = doOperationOn(5, multiplyBy2);
+// console.log(result);
+// result = doOperationOn(5, multiplyBy3);
+// console.log(result);
+
+//**** Passing by Value****
+// var a = 7;
+// var b = a;
+// console.log("a:" +a);
+// console.log("b:" +b);
+
+// console.log("After Update");
+// b = 5;
+// console.log("a:" +a);
+// console.log("b:" +b);
+
+//**** Passing by Reference****
+var a = {x: 7};
+var b = a;
+console.log(a);
+console.log(b);
+
+console.log("After Update");
+b.x = 5;
+console.log(a);
+console.log(b);
