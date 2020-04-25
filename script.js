@@ -123,12 +123,28 @@
 // console.log("b:" +b);
 
 //**** Passing by Reference****
-var a = {x: 7};
-var b = a;
-console.log(a);
-console.log(b);
+// var a = {x: 7};
+// var b = a;
+// console.log(a);
+// console.log(b);
 
-console.log("After Update");
-b.x = 5;
-console.log(a);
-console.log(b);
+// console.log("After Update");
+// b.x = 5;
+// console.log(a);
+// console.log(b);
+
+//*****Function Constructors*****
+function Circle (radius) {
+    this.radius = radius;
+};
+Circle.prototype.getArea = function () {
+    return Math.PI * Math.pow(this.radius, 2);
+}
+Circle();
+var myCircle = new Circle(10);
+console.log(myCircle);
+console.log(myCircle.getArea());
+
+var otherCircle = new Circle(20);
+console.log(otherCircle);
+console.log(otherCircle.getArea());
