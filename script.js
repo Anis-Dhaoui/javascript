@@ -134,17 +134,33 @@
 // console.log(b);
 
 //*****Function Constructors*****
-function Circle (radius) {
-    this.radius = radius;
-};
-Circle.prototype.getArea = function () {
-    return Math.PI * Math.pow(this.radius, 2);
-}
-Circle();
-var myCircle = new Circle(10);
-console.log(myCircle);
-console.log(myCircle.getArea());
+// function Circle (radius) {
+//     this.radius = radius;
+// };
+// Circle.prototype.getArea = function () {
+//     return Math.PI * Math.pow(this.radius, 2);
+// }
+// Circle();
+// var myCircle = new Circle(10);
+// console.log(myCircle);
+// console.log(myCircle.getArea());
 
-var otherCircle = new Circle(20);
-console.log(otherCircle);
-console.log(otherCircle.getArea());
+// var otherCircle = new Circle(20);
+// console.log(otherCircle);
+// console.log(otherCircle.getArea());
+
+//Object Literals and this keyword
+
+var circleLiterals = {
+    radius: 10,
+    getArea: function () {
+        var self = this;
+        var increaseRadius = function () {
+            self.radius = 20;
+        };
+        increaseRadius();
+        console.log(this.radius);
+        return Math.PI * Math.pow(this.radius, 2);
+    }
+};
+console.log(circleLiterals.getArea());
