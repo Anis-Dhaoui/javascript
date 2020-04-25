@@ -151,16 +151,46 @@
 
 //Object Literals and this keyword
 
-var circleLiterals = {
-    radius: 10,
-    getArea: function () {
-        var self = this;
-        var increaseRadius = function () {
-            self.radius = 20;
-        };
-        increaseRadius();
-        console.log(this.radius);
-        return Math.PI * Math.pow(this.radius, 2);
-    }
+// var circleLiterals = {
+//     radius: 10,
+//     getArea: function () {
+//         var self = this;
+//         var increaseRadius = function () {
+//             self.radius = 20;
+//         };
+//         increaseRadius();
+//         console.log(this.radius);
+//         return Math.PI * Math.pow(this.radius, 2);
+//     }
+// };
+// console.log(circleLiterals.getArea());
+
+
+// Arrays
+
+var names = ["Anis", "Yaakov", "Mohamed"];
+
+console.log("****************Using for.. in****************");
+for (prop in names){
+    console.log(prop + ":  " + names[prop]);
 };
-console.log(circleLiterals.getArea());
+console.log("**************Using for loop*********************");
+for(var i = 0; i < names.length; i++){
+    console.log(i + ":  " + names[i]);
+}
+
+
+names[100] = "Sarah";
+console.log("**************Using for.. in after added a new property********************")
+for (prop in names){
+    console.log(prop + ":  " + names[prop]);
+};
+console.log("**************Using for loop after added a new property********************")
+for(var i = 0; i < names.length; i++){
+    console.log(i + ":  " + names[i]);
+}
+
+// var myObj = {name:"Anis", lastName: "Dhaoui", career: "Web Dev"};
+// for (prop in myObj){
+//     console.log(prop + ":   " + myObj[prop])
+// }
