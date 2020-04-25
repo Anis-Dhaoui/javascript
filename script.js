@@ -168,29 +168,39 @@
 
 // Arrays
 
-var names = ["Anis", "Yaakov", "Mohamed"];
+// var names = ["Anis", "Yaakov", "Mohamed"];
 
-console.log("****************Using for.. in****************");
-for (prop in names){
-    console.log(prop + ":  " + names[prop]);
-};
-console.log("**************Using for loop*********************");
-for(var i = 0; i < names.length; i++){
-    console.log(i + ":  " + names[i]);
-}
+// console.log("****************Using for.. in****************");
+// for (prop in names){
+//     console.log(prop + ":  " + names[prop]);
+// };
+// console.log("**************Using for loop*********************");
+// for(var i = 0; i < names.length; i++){
+//     console.log(i + ":  " + names[i]);
+// }
 
 
-names[100] = "Sarah";
-console.log("**************Using for.. in after added a new property********************")
-for (prop in names){
-    console.log(prop + ":  " + names[prop]);
-};
-console.log("**************Using for loop after added a new property********************")
-for(var i = 0; i < names.length; i++){
-    console.log(i + ":  " + names[i]);
-}
+// names[100] = "Sarah";
+// console.log("**************Using for.. in after added a new property********************")
+// for (prop in names){
+//     console.log(prop + ":  " + names[prop]);
+// };
+// console.log("**************Using for loop after added a new property********************")
+// for(var i = 0; i < names.length; i++){
+//     console.log(i + ":  " + names[i]);
+// }
 
 // var myObj = {name:"Anis", lastName: "Dhaoui", career: "Web Dev"};
 // for (prop in myObj){
 //     console.log(prop + ":   " + myObj[prop])
 // }
+
+//Closures 
+function makeMultiplier (multiplier){
+    return function (x){
+        return multiplier * x;
+    };
+};
+var doubleAll = makeMultiplier(2);
+var result = doubleAll(10);
+console.log(result);
