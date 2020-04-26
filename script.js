@@ -196,11 +196,24 @@
 // }
 
 //Closures 
-function makeMultiplier (multiplier){
-    return function (x){
-        return multiplier * x;
-    };
+// function makeMultiplier (multiplier){
+//     return function (x){
+//         return multiplier * x;
+//     };
+// };
+// var doubleAll = makeMultiplier(2);
+// var result = doubleAll(10);
+// console.log(result);
+
+//**************Fake Name Space*********
+// var name = "Anis";
+// function sayHello() {
+//     console.log("Hello " + name);
+// };
+
+var anisGreeter = {};
+anisGreeter.name = "Anis";
+anisGreeter.sayHello = function () {
+    console.log("Hello " + anisGreeter.name);
 };
-var doubleAll = makeMultiplier(2);
-var result = doubleAll(10);
-console.log(result);
+
