@@ -211,9 +211,19 @@
 //     console.log("Hello " + name);
 // };
 
-var anisGreeter = {};
-anisGreeter.name = "Anis";
-anisGreeter.sayHello = function () {
-    console.log("Hello " + anisGreeter.name);
-};
+// var anisGreeter = {};
+// anisGreeter.name = "Anis";
+// anisGreeter.sayHello = function () {
+//     console.log("Hello " + anisGreeter.name);
+// };
 
+// ******** Immediately Invoked Function Expressions (IIFE) ************
+(function (window) {
+    var anisGreeter = {};
+    anisGreeter.name = "Anis";
+    var greeting = "Hello ";
+    anisGreeter.sayHello = function () {
+        console.log(greeting + anisGreeter.name);
+    }  
+    window.anisGreeter = anisGreeter;   
+})(window);
